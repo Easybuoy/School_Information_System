@@ -7,12 +7,25 @@ var path = require('path');
 
 
 var app = express();
+
 const route = require('./routes/route');
 
 //port no
 const port = 3000;
 
-app.use('')
+//adding middleware
+ app.use(cors());
+//
+//body-parser
+app.use(bodyParser.json());
+//
+// //static files
+ app.use(express.static(path.join(__dirname, 'public')));
+//
+//routes
+ app.use('/api', route);
+
+
 
 //testing server
 app.get('/',function (req, res) {

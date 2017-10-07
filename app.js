@@ -4,11 +4,27 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var path = require('path');
-
+const config = require('./config/database');
 
 var app = express();
 
 const route = require('./routes/route');
+
+//connect to mongoosedb
+mongoose.connect(config.database);
+
+//on connection
+mongoose.connection.on('connected', function () {
+    console.log('Conntected  to Database'+config.database);
+});
+
+// //on connection error
+mongoose.connection.on('error', function (err) {
+    if(err){
+        console.log('Error in Database Connection', +err);
+    }
+})
+
 
 //port no
 const port = 3000;

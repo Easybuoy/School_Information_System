@@ -11,13 +11,14 @@ var app = express();
 const route = require('./routes/route');
 
 //connect to mongoosedb
-mongoose.connect(config.database);
+mongoose.connect('mongodb://localhost:27017/school_portal');
 
 //on connection
 mongoose.connection.on('connected', function () {
-    console.log('Conntected  to Database'+config.database);
-});
-
+    console.log('Conntected  to Database');
+})
+//
+//
 // //on connection error
 mongoose.connection.on('error', function (err) {
     if(err){

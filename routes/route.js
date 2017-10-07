@@ -5,8 +5,8 @@ const Student = require('../models/student');
 
 //retrieving data
 router.get('/students', function (req, res, next) {
-    Student.find(function (err, student) {
-        res.json(student)
+    Student.find(function (err, students) {
+        res.json(students)
 
     })
 });
@@ -15,20 +15,10 @@ router.get('/students', function (req, res, next) {
 //add contacts
 router.post('/student',function (req, res, next) {
 //logic to add contact
-    let newStudent = new Student({
-        surname: req.body.surnname,
-        first_name: req.body.first_name,
-        middle_name: req.body.middle_name,
-        age: req.body.age,
-        email: req.body.email,
-        address: req.body.address,
-        gender: req.body.gender,
-        phone: req.body.phone,
-
-    });
-    newStudent.save(function (err, student) {
+    var newStudent = new Student(req.body);
+    newStudent.save(function (err) {
         if(err){
-            res.json({msg: 'Failed to savea'});
+            res.json({msg: 'Failed To Add Student'});
         }
         else{
             res.json({msg: 'Student Added Successfully'});

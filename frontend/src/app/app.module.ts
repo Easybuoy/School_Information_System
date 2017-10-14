@@ -5,6 +5,7 @@ import { MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule, MatTab
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { StudentsComponent } from './students/students.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,10 @@ import { StudentsComponent } from './students/students.component';
     MatListModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

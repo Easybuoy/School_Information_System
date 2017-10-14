@@ -1,0 +1,54 @@
+//importing modules
+var express = require('express');
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+var cors = require('cors');
+var path = require('path');
+const config = require('./config/database');
+
+var app = express();
+
+const route = require('./routes/route');
+
+//connect to mongoosedb
+mongoose.connect('mongodb://localhost:27017/school_portal');
+
+//on connection
+mongoose.connection.on('connected', function () {
+    console.log('Conntected  to Database');
+})
+//
+//
+// //on connection error
+mongoose.connection.on('error', function (err) {
+    if(err){
+        console.log('Error in Database Connection', +err);
+    }
+})
+
+
+//port no
+const port = 3000;
+
+//adding middleware
+ app.use(cors());
+//
+//body-parser
+app.use(bodyParser.json());
+//
+// //static files
+ app.use(express.static(path.join(__dirname, 'public')));
+//
+//routes
+ app.use('/api', route);
+
+
+
+//testing server
+app.get('/',function (req, res) {
+   res.send('Meus');
+});
+
+app.listen(port,function () {
+     console.log('Server started at port'+port);
+});

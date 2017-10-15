@@ -23,24 +23,30 @@ export class StudentsComponent implements OnInit {
   students: Student[];
   student: Student;
   surname: string;
-  first_name: string;
-  middle_name: string;
+  name: string;
   age: number;
   email: string ;
   address: string;
   gender: string;
   phone: string;
+  department: string;
+  course: string;
+  level: string;
+  year_enrolled: string;
 
   addStudent(){
     const newStudent ={
       surname: this.surname,
-    first_name: this.first_name,
-    middle_name: this.middle_name,
+    name: this.name,
     age: this.age,
     email: this.email,
     address: this.address,
     gender: this.gender,
-    phone: this.phone
+    phone: this.phone,
+      department: this.department,
+      course: this.course,
+      level: this.level,
+      year_enrolled: this.year_enrolled
     }
     this.studentService.addStudent(newStudent)
       .subscribe(student => {this.students.push(student)});

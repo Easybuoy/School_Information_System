@@ -13,6 +13,13 @@ export class StudentsComponent implements OnInit {
 
 
   constructor(private studentService: StudentService) {  }
+  // openSnackBar(){
+  //   this.snackBar.openFromComponent(StudentsComponent, {
+  //     duration: 500,
+  //   });
+  // }
+
+
   students: Student[];
   student: Student;
   surname: string;

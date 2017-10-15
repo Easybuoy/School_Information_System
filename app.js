@@ -37,8 +37,15 @@ const port = 3000;
 app.use(bodyParser.json());
 //
 // //static files
- app.use(express.static(path.join(__dirname, 'public')));
-//
+ app.use(express.static(path.join(__dirname, 'frontend')));
+
+ // Send all other request to Angular
+// app.get('*', function (req, res) {
+//     res.sendFile(path.join(__dirname, 'frontend/src/index.html'));
+// });
+
+
+
 //routes
  app.use('/api', route);
 

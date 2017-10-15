@@ -1,10 +1,5 @@
-<!--<p>-->
-  <!--students works!-->
-<!--</p>-->
-
-
 <mat-toolbar color="primary">
-  <span> School Information</span>
+  <span> School Information System</span>
   <span class="spacer"></span>
 
   <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -12,8 +7,8 @@
   </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item>
-      <mat-icon>dialpad</mat-icon>
-      <span>Redial</span>
+      <mat-icon><i class="material-icons">perm_identity</i></mat-icon>
+      <span>Profile</span>
     </button>
     <button mat-menu-item disabled>
       <mat-icon>notifications_off</mat-icon>
@@ -31,38 +26,6 @@
 <form (ngSubmit)="addStudent()">
 <div class="form-container">
   <h1> Create New Student Resource</h1>
-
-  <!--<label>Surname-->
-  <!--<input type="text" ngModel="surname" name="surname">-->
-  <!--</label>-->
-
-  <!--<label>First Name-->
-    <!--<input type="text" ngModel="first_name" name="first_name" >-->
-  <!--</label>-->
-
-  <!--<label>Middle Name-->
-    <!--<input type="text" ngModel="middle_name" name="middle_name" >-->
-  <!--</label>-->
-
-  <!--<label>Age-->
-    <!--<input type="text" ngModel="age" name="age" >-->
-  <!--</label>-->
-
-  <!--<label>Email-->
-    <!--<input type="text" ngModel="email" name="email" >-->
-  <!--</label>-->
-
-  <!--<label>Address-->
-    <!--<input type="text" ngModel="address" name="address" >-->
-  <!--</label>-->
-
-  <!--<label>Gender-->
-    <!--<input type="text" ngModel="gender" name="gender" >-->
-  <!--</label>-->
-
-  <!--<label>Phone-->
-    <!--<input type="text" ngModel="phone" name="phone" >-->
-  <!--</label>-->
 
     <mat-form-field>
       <input matInput type="text" placeholder="Surname" [(ngModel)]="surname" name="surname" required>
@@ -95,7 +58,6 @@
   <mat-form-field>
     <input matInput type="number" placeholder="Phone" [(ngModel)]="phone" name="phone" required>
   </mat-form-field>
-<!--<input type="submit" value="submit">-->
   <button type="submit" mat-raised-button color="primary">Create</button>
 
   </div>
@@ -108,9 +70,11 @@
   <mat-tab label="View Students">
     <mat-list *ngFor="let student of students">
       <mat-list-item>{{student.first_name}} </mat-list-item>
+      <button mat-raised-button color="warn" (click)="deleteStudent(student._id)"><i class="material-icons">delete</i></button>
+      <button mat-raised-button color="warn" ><i class="material-icons">remove_red_eye</i></button>
+
     </mat-list>
 
-    <button mat-raised-button color="warn" (click)="deleteStudent(student._id)"><i class="material-icons">delete</i></button>
 
 
   </mat-tab>

@@ -70,8 +70,8 @@
   <mat-tab label="View Students">
     <mat-list *ngFor="let student of students">
       <mat-list-item>{{student.first_name}} </mat-list-item>
-      <button mat-raised-button color="warn" (click)="deleteStudent(student._id)"><i class="material-icons">delete</i></button>
-      <button mat-raised-button color="warn" ><i class="material-icons">remove_red_eye</i></button>
+      <button mat-raised-button><i class="material-icons">remove_red_eye</i></button>
+      <button mat-raised-button color="warn"  (click)="deleteStudent(student._id)"><i class="material-icons">delete</i></button>
 
     </mat-list>
 

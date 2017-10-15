@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule, MatTabsModule, MatListModule, MatTableModule, MatFormFieldModule, MatInputModule, MatSnackBarModule } from '@angular/material';
+import { MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule, MatTabsModule, MatListModule, MatTableModule, MatFormFieldModule, MatInputModule, MatSnackBarModule, MatSelectModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { StudentsComponent } from './students/students.component';
@@ -27,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatSelectModule
 
   ],
   providers: [],

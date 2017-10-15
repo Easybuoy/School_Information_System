@@ -23,7 +23,7 @@
 
 <mat-tab-group>
   <mat-tab label="Create New Student">
-<form (ngSubmit)="addStudent()">
+<form (ngSubmit)="addStudent()" name="studentForm">
 <div class="form-container">
   <h1> Create New Student Resource</h1>
 
@@ -40,10 +40,6 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput type="number" placeholder="Age" [(ngModel)]="age" name="age" required>
-  </mat-form-field>
-
-  <mat-form-field>
     <input matInput type="email" placeholder="Email" [(ngModel)]="email" name="email" required>
   </mat-form-field>
 
@@ -52,13 +48,30 @@
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput type="text" placeholder="Gender" [(ngModel)]="gender" name="gender" required>
+    <input matInput type="number" placeholder="Phone" [(ngModel)]="phone" name="phone" required>
   </mat-form-field>
 
   <mat-form-field>
-    <input matInput type="number" placeholder="Phone" [(ngModel)]="phone" name="phone" required>
+    <mat-select placeholder="Gender" [(ngModel)]="gender" name="gender" required>
+      <mat-option value="Male">Male </mat-option>
+      <mat-option value="Female">Female </mat-option>
+    </mat-select>
+    <!--<input matInput type="text" placeholder="Gender" >-->
   </mat-form-field>
-  <button type="submit" mat-raised-button color="primary">Create</button>
+
+  <mat-form-field>
+    <input matInput type="number" placeholder="Age" [(ngModel)]="age" name="age" required>
+  </mat-form-field>
+
+
+
+
+
+
+  <button type="submit" mat-raised-button color="primary" >Create</button>
+
+
+
 
   </div>
 
@@ -69,10 +82,10 @@
 
   <mat-tab label="View Students">
     <mat-list *ngFor="let student of students">
-      <mat-list-item>{{student.first_name}} </mat-list-item>
-      <button mat-raised-button><i class="material-icons">remove_red_eye</i></button>
-      <button mat-raised-button color="warn"  (click)="deleteStudent(student._id)"><i class="material-icons">delete</i></button>
-
+      <mat-list-item class="matlist">{{student.first_name}}
+      <button mat-raised-button><i class="material-icons" >remove_red_eye</i></button>
+      <button mat-raised-button color="warn" (click)="deleteStudent(student._id)"><i class="material-icons" >delete</i></button>
+      </mat-list-item>
     </mat-list>
 
 

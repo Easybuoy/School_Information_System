@@ -70,18 +70,21 @@
 
 
   <mat-form-field>
-    <input matInput type="text" placeholder="Level" [(ngModel)]="level" name="level" required>
+    <mat-select placeholder="Level" [(ngModel)]="level" name="level" required>
+      <mat-option value="100">100</mat-option>
+      <mat-option value="200">200</mat-option>
+      <mat-option value="300">300</mat-option>
+      <mat-option value="400">400</mat-option>
+      <mat-option value="500">500</mat-option>
+    </mat-select>
   </mat-form-field>
-
 
   <mat-form-field>
-    <input matInput type="text" placeholder="Year Enrolled" [(ngModel)]="year_enrolled" name="year_enrolled" required>
+    <input matInput type="number" placeholder="Year Enrolled" [(ngModel)]="year_enrolled" name="year_enrolled" required>
   </mat-form-field>
 
 
-
-
-  <button type="submit" mat-raised-button color="primary" >Create</button>
+  <button type="submit" mat-raised-button color="primary" (click)="openSnackBar()">Create</button>
 
 
 

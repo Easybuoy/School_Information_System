@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StudentService } from "../student.service";
-import { Student } from "../student";
+import { StudentService } from '../student.service';
+import { Student } from '../student';
+import {MatSnackBar} from '@angular/material';
 
 
 @Component({
@@ -12,12 +13,8 @@ import { Student } from "../student";
 export class StudentsComponent implements OnInit {
 
 
-  constructor(private studentService: StudentService) {  }
-  // openSnackBar(){
-  //   this.snackBar.openFromComponent(StudentsComponent, {
-  //     duration: 500,
-  //   });
-  // }
+  constructor(public snackBar: MatSnackBar, private studentService: StudentService) {  }
+
 
 
   students: Student[];
@@ -33,6 +30,8 @@ export class StudentsComponent implements OnInit {
   course: string;
   level: string;
   year_enrolled: string;
+
+
 
   addStudent(){
     const newStudent ={
@@ -77,5 +76,10 @@ deleteStudent(id:any){
   }
 
 
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open('How arrr yu', 'OK', {
+      duration: 4000,
+    });
+  }
 
 }

@@ -5,21 +5,21 @@ const StudentSchema = mongoose.Schema({
     type: String,
     required: true
 },
-    first_name:{
+    name:{
         type: String,
         required: true
     },
-    middle_name:{
-        type: String,
-    },
     age:{
         type: Number,
+        required: true
     },
     email:{
         type:String,
+        required: true
     },
     address:{
         type: String,
+        required: true
     },
     gender:{
         type: String,
@@ -27,6 +27,22 @@ const StudentSchema = mongoose.Schema({
     },
     phone:{
         type: String,
+    },
+    department:{
+        type: String,
+        required: true
+    },
+    course:{
+        type:String,
+        required: true
+    },
+    level:{
+        type: Number,
+        required: true
+    },
+    year_enrolled:{
+        type: Number,
+        required: true
     }
 
 });

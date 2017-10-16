@@ -1,10 +1,5 @@
-<!--<p>-->
-  <!--students works!-->
-<!--</p>-->
-
-
 <mat-toolbar color="primary">
-  <span> School Information</span>
+  <span> School Information System</span>
   <span class="spacer"></span>
 
   <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -12,27 +7,101 @@
   </button>
   <mat-menu #menu="matMenu">
     <button mat-menu-item>
-      <mat-icon>dialpad</mat-icon>
-      <span>Redial</span>
+      <mat-icon><i class="material-icons">perm_identity</i></mat-icon>
+      <span>Profile</span>
     </button>
     <button mat-menu-item disabled>
-      <mat-icon>voicemail</mat-icon>
-      <span>Check voicemail</span>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Notifications</span>
     </button>
     <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon>
-      <span>Disable alerts</span>
+      <mat-icon>fingerprint</mat-icon>
+      <span>Login</span>
     </button>
   </mat-menu>
 </mat-toolbar>
 
 <mat-tab-group>
   <mat-tab label="Create New Student">
+<form (ngSubmit)="addStudent()" name="studentForm">
+<div class="form-container">
+  <h1> Create New Student Resource</h1>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Surname" [(ngModel)]="surname" name="surname" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Name" [(ngModel)]="name" name="name" required>
+    </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="email" placeholder="Email" [(ngModel)]="email" name="email" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Address" [(ngModel)]="address" name="address" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" placeholder="Phone" [(ngModel)]="phone" name="phone" >
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Gender" [(ngModel)]="gender" name="gender" required>
+      <mat-option value="Male">Male </mat-option>
+      <mat-option value="Female">Female </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="number" placeholder="Age" [(ngModel)]="age" name="age" required>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Department" [(ngModel)]="department" name="department" required>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Course" [(ngModel)]="course" name="course" required>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Level" [(ngModel)]="level" name="level" required>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Year Enrolled" [(ngModel)]="year_enrolled" name="year_enrolled" required>
+  </mat-form-field>
+
+
+
+
+  <button type="submit" mat-raised-button color="primary" >Create</button>
+
+
+
+
+  </div>
+
+</form>
+
 
   </mat-tab>
+
   <mat-tab label="View Students">
     <mat-list *ngFor="let student of students">
-      <mat-list-item>{{student.first_name}} </mat-list-item></mat-list>
+      <mat-list-item class="matlist">{{student.name}}
+      <button mat-raised-button><i class="material-icons" >remove_red_eye</i></button>
+      <button mat-raised-button color="warn" (click)="deleteStudent(student._id)"><i class="material-icons" >delete</i></button>
+      </mat-list-item>
+    </mat-list>
+
+
 
   </mat-tab>
 </mat-tab-group>

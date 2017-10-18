@@ -12,7 +12,7 @@ router.get('/students', function (req, res, next) {
 });
 
 
-//add contacts
+//add student
 router.post('/student',function (req, res, next) {
 //logic to add contact
     var newStudent = new Student(req.body);
@@ -27,19 +27,29 @@ router.post('/student',function (req, res, next) {
 });
 
 
-//delete contacts
+//delete student
 router.delete('/student/:id',function (req, res, next) {
 //logic to delete contact
     Student.remove({_id:req.params.id},function (err, result) {
         if(err){
-            res.json(err);
+            res.json({msg: 'Failed To Delete Student'});
         }
         else {
-            res.json(result);
+            res.json({msg: 'Student Deleted Successfully'});
         }
     })
 });
 
+//update student
+router.put('/student/:id', function (req, res, next) {
+    Student.update({_id:req.params.id}, req.body, function (err, result) {
+        if(err){
+            res.json({msg: 'Failed To Update Student'});
+        }else{
+            res.json({msg: 'Student Updated Successfully'});
+        }
+    })
+});
 
 
 

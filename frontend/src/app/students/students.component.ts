@@ -15,8 +15,6 @@ export class StudentsComponent implements OnInit {
 
   constructor(public snackBar: MatSnackBar, private studentService: StudentService) {  }
 
-
-
   students: Student[];
   student: Student;
   surname: string;
@@ -77,7 +75,7 @@ deleteStudent(id:any){
 
 
   openSnackBar(message: string, action: string) {
-    this.snackBar.open('How arrr yu', 'OK', {
+    this.snackBar.open('Student Added Successfully', 'OK', {
       duration: 4000,
     });
   }

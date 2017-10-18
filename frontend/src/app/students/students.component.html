@@ -86,9 +86,6 @@
 
   <button type="submit" mat-raised-button color="primary" (click)="openSnackBar()">Create</button>
 
-
-
-
   </div>
 
 </form>
@@ -98,7 +95,8 @@
 
   <mat-tab label="View Students">
     <mat-list *ngFor="let student of students">
-      <mat-list-item class="matlist">{{student.name}}
+
+      <mat-list-item class="matlist">{{student.name}} {{student.surname}} {{student.email}}
       <button mat-raised-button><i class="material-icons" >remove_red_eye</i></button>
       <button mat-raised-button color="warn" (click)="deleteStudent(student._id)"><i class="material-icons" >delete</i></button>
       </mat-list-item>

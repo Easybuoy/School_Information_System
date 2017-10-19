@@ -3,7 +3,6 @@ import { StudentService } from '../student.service';
 import { Student } from '../student';
 import {MatSnackBar} from '@angular/material';
 
-
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
@@ -79,5 +78,5 @@ deleteStudent(id:any){
       duration: 4000,
     });
   }
-
 }
+

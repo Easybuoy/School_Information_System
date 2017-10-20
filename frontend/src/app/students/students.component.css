@@ -20,5 +20,15 @@ h1{
 }
 
 .matlist{
-  padding: 10px;
+  margin-left: 135px;
+  word-spacing: 300px;
+}
+
+.buttonlist{
+  margin: 40px;
+}
+
+.labellist{
+  padding:  50px;
+  margin: 100px;
 }

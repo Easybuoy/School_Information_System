@@ -32,10 +32,10 @@ router.delete('/student/:id',function (req, res, next) {
 //logic to delete contact
     Student.remove({_id:req.params.id},function (err, result) {
         if(err){
-            res.json({msg: 'Failed To Delete Student'});
+            res.json(err);
         }
         else {
-            res.json({msg: 'Student Deleted Successfully'});
+            res.json(result);
         }
     })
 });

@@ -11,7 +11,6 @@ import {MatSnackBar} from '@angular/material';
 })
 export class StudentsComponent implements OnInit {
 
-
   constructor(public snackBar: MatSnackBar, private studentService: StudentService) {  }
 
   students: Student[];
@@ -66,6 +65,7 @@ deleteStudent(id:any){
       }
     })
 }
+
 
   ngOnInit() {
     this.studentService.getStudents()

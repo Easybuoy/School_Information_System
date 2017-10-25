@@ -7,11 +7,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { StudentsComponent } from './students/students.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpdateStudentComponent } from './update-student/update-student.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentsComponent,
+    UpdateStudentComponent,
   ],
   imports: [
     HttpModule,
@@ -29,8 +32,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    MatSelectModule
-
+    MatSelectModule,
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: StudentsComponent
+      },
+      {
+        path: 'updateStudent',
+        component: UpdateStudentComponent
+      },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

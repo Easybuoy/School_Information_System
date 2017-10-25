@@ -19,16 +19,42 @@ h1{
   width: 100%;
 }
 
-.matlist{
-  margin-left: 135px;
-  word-spacing: 300px;
-}
+/*.matlist{*/
+  /*margin-left: 10px;*/
+  /*word-spacing: 30px;*/
+/*}*/
 
-.buttonlist{
-  margin: 40px;
-}
+/*.buttonlist{*/
+/*margin: 5px;*/
+/*}*/
 
-.labellist{
-  padding:  50px;
-  margin: 100px;
+
+/*.matlistdesign{*/
+  /*background: white;*/
+  /*width: 90%;*/
+  /*margin: 10px auto 0px auto;*/
+  /*padding: 1em;*/
+  /*box-shadow: 1px 1px 0 lightgrey;*/
+/*}*/
+
+table{
+  /*display: block;*/
+  width: 90%;
+  padding: 2em;
+  margin: 2em;
+  background: #fff;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+
+}
+/*.th{*/
+  /*margin: 20px;*/
+  /*border: 2px black;*/
+/*}*/
+th{
+  color: #ffffff;
+  text-align: center;
+}
+td{
+  text-align: center;
 }

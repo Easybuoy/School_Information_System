@@ -22,70 +22,77 @@
 </mat-toolbar>
 
 
-<mat-tab-group>
-<mat-tab label="Update Student">
-<form (ngSubmit)="addStudent()" name="studentForm">
+<mat-tab-group >
+<mat-tab label="Update Student" >
+<form *ngFor="let student of students" (ngSubmit)="updateStudent(student._id)" name="studentForm">
   <div class="form-container">
     <h1> Update Student</h1>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Surname" [(ngModel)]="surname" name="surname" required>
+      <input matInput type="text" placeholder="Surname" [(ngModel)]="student.surname" name="surname" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Name" [(ngModel)]="name" name="name" required>
+      <input matInput type="text" placeholder="Name" [(ngModel)]="student.name" name="name" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="email" placeholder="Email" [(ngModel)]="email" name="email" required>
+      <input matInput type="email" placeholder="Email" [(ngModel)]="student.email" name="email" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Address" [(ngModel)]="address" name="address" required>
+      <input matInput type="text" placeholder="Address" [(ngModel)]="student.address" name="address" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="number" placeholder="Phone" [(ngModel)]="phone" name="phone" >
+      <input matInput type="number" placeholder="Phone" [(ngModel)]="student.phone" name="phone" >
     </mat-form-field>
 
     <mat-form-field>
-      <mat-select placeholder="Gender" [(ngModel)]="gender" name="gender" required>
-        <mat-option value="Male">Male </mat-option>
-        <mat-option value="Female">Female </mat-option>
-      </mat-select>
+      <input matInput type="text" placeholder="Gender" [(ngModel)]="student.gender" name="gender" required>
     </mat-form-field>
 
-    <mat-form-field>
-      <input matInput type="number" placeholder="Age" [(ngModel)]="age" name="age" required>
-    </mat-form-field>
-
-
-    <mat-form-field>
-      <input matInput type="text" placeholder="Department" [(ngModel)]="department" name="department" required>
-    </mat-form-field>
-
+    <!--<mat-form-field>-->
+      <!--<mat-select placeholder="Gender" [(ngModel)]="student.gender" name="gender" required>-->
+        <!--<mat-option value="Male">Male </mat-option>-->
+        <!--<mat-option value="Female">Female </mat-option>-->
+      <!--</mat-select>-->
+    <!--</mat-form-field>-->
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Course" [(ngModel)]="course" name="course" required>
+      <input matInput type="number" placeholder="Age" [(ngModel)]="student.age" name="age" required>
     </mat-form-field>
 
 
     <mat-form-field>
-      <mat-select placeholder="Level" [(ngModel)]="level" name="level" required>
-        <mat-option value="100">100</mat-option>
-        <mat-option value="200">200</mat-option>
-        <mat-option value="300">300</mat-option>
-        <mat-option value="400">400</mat-option>
-        <mat-option value="500">500</mat-option>
-      </mat-select>
+      <input matInput type="text" placeholder="Department" [(ngModel)]="student.department" name="department" required>
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input matInput type="text" placeholder="Course" [(ngModel)]="student.course" name="course" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="number" placeholder="Year Enrolled" [(ngModel)]="year_enrolled" name="year_enrolled" required>
+      <input matInput type="text" placeholder="Level" [(ngModel)]="student.level" name="level" required>
+    </mat-form-field>
+
+    <!--<mat-form-field>-->
+      <!--<mat-select placeholder="Level" [(ngModel)]="student.level" name="level" required>-->
+        <!--<mat-option value="100">100</mat-option>-->
+        <!--<mat-option value="200">200</mat-option>-->
+        <!--<mat-option value="300">300</mat-option>-->
+        <!--<mat-option value="400">400</mat-option>-->
+        <!--<mat-option value="500">500</mat-option>-->
+      <!--</mat-select>-->
+    <!--</mat-form-field>-->
+
+    <mat-form-field>
+      <input matInput type="number" placeholder="Year Enrolled" [(ngModel)]="student.year_enrolled" name="year_enrolled" required>
     </mat-form-field>
 
 
-    <button type="submit" mat-raised-button color="primary" (click)="openSnackBar()">Create</button>
+    <button type="submit" mat-raised-button color="primary" (click)="openSnackBar()">Update</button>
 
   </div>
 

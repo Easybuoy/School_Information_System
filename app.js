@@ -37,11 +37,11 @@ const port = 3000;
 app.use(bodyParser.json());
 //
 // //static files
- app.use(express.static(path.join(__dirname, 'frontend')));
+ app.use(express.static(path.join(__dirname, 'frontend/dist')));
 
  // Send all other request to Angular
 // app.get('*', function (req, res) {
-//     res.sendFile(path.join(__dirname, 'frontend/src/index.html'));
+//     res.sendFile(path.join(__dirname, 'frontend'));
 // });
 
 
@@ -53,7 +53,7 @@ app.use(bodyParser.json());
 
 //testing server
 app.get('/',function (req, res) {
-   res.send('Meus');
+    res.sendFile(__dirname + '/frontend');
 });
 
 app.listen(port,function () {

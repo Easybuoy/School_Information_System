@@ -30,7 +30,7 @@ export class StudentsComponent implements OnInit {
 
 
   addStudent(){
-    const newStudent ={
+    const newStudent = {
       surname: this.surname,
     name: this.name,
     age: this.age,
@@ -57,9 +57,9 @@ deleteStudent(id:any){
   this.studentService.deleteStudent(id)
     .subscribe(data =>{
       if(data.n == 1){
-        for(var i = 0; i <students.length;  i++){
-          if(students[i]._id == id){
-            students.splice(i,1);
+        for(var i = 0; i < students.length;  i++){
+          if (students[i]._id == id) {
+            students.splice(i, 1);
           }
         }
       }

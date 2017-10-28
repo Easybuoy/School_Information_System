@@ -39,7 +39,7 @@ import { RouterModule } from '@angular/router';
         component: StudentsComponent
       },
       {
-        path: 'updateStudent',
+        path: 'updateStudent/:id',
         component: UpdateStudentComponent
       },
     ])

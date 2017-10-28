@@ -4,6 +4,8 @@
   "description": "School App For Students Resource",
   "main": "app.js",
   "scripts": {
+//    "ng": "ng",
+//    "start": "ng serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ekunola Ezekiel",

@@ -6,11 +6,18 @@ const Student = require('../models/student');
 //retrieving data
 router.get('/students', function (req, res, next) {
     Student.find(function (err, students) {
-        res.json(students)
+        res.json(students);
 
-    })
+    });
 });
 
+// retrieve one data
+router.get('/student/:id', function (req, res, next) {
+    Student.findOne(function (err, students) {
+        res.json(students);
+
+    });
+});
 
 //add student
 router.post('/student',function (req, res, next) {
@@ -23,7 +30,7 @@ router.post('/student',function (req, res, next) {
         else{
             res.json({msg: 'Student Added Successfully'});
         }
-    })
+    });
 });
 
 
@@ -37,7 +44,7 @@ router.delete('/student/:id',function (req, res, next) {
         else {
             res.json(result);
         }
-    })
+    });
 });
 
 //update student
@@ -48,7 +55,7 @@ router.put('/student/:id', function (req, res, next) {
         }else{
             res.json({msg: 'Student Updated Successfully'});
         }
-    })
+    });
 });
 
 

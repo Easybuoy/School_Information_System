@@ -1,0 +1,19 @@
+{
+  "name": "school_portal",
+  "version": "1.0.0",
+  "description": "School App For Students Resource",
+  "main": "app.js",
+  "scripts": {
+//    "ng": "ng",
+//    "start": "ng serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ekunola Ezekiel",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.1",
+    "mongoose": "^4.12.0"
+  }
+}

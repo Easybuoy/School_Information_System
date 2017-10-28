@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700');
+
+body{
+  background: #e8e8e8;
+  font-family: 'Muli';
+}
+.spacer{
+  -webkit-box-flex: 1;
+  -ms-flex:1 1 auto;
+  flex: 11 auto;
+}
+

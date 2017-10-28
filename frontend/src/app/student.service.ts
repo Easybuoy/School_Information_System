@@ -9,13 +9,13 @@ import { Http, Headers } from '@angular/http';
   constructor(private http: Http) { }
     // retrieving students
     getStudents() {
-      return this.http.get('http://localhost:3000/api/students')
+      return this.http.get('api/students')
         .map(res => res.json());
     }
 
     // retrieve one student
     getOneStudent(id) {
-      return this.http.get('http://localhost:3000/api/student/' + id)
+      return this.http.get('api/student/' + id)
         .map(res => res.json());
     }
 
@@ -23,19 +23,19 @@ import { Http, Headers } from '@angular/http';
   addStudent(newStudent) {
       var headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      return this.http.post('http://localhost:3000/api/student', newStudent, { headers: headers })
+      return this.http.post('api/student', newStudent, { headers: headers })
         .map(res => res.json());
   }
 
   // delete student
   deleteStudent(id) {
-      return this.http.delete('http://localhost:3000/api/student/' + id)
+      return this.http.delete('api/student/' + id)
         .map(res => res.json());
   }
 
   // update student
     updateStudent(id) {
-    return this.http.put('http://localhost:3000/api/student/' + id,'','')
+    return this.http.put('api/student/' + id,'','')
       .map(res => res.json());
     }
 }

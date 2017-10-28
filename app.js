@@ -11,7 +11,7 @@ var app = express();
 const route = require('./routes/route');
 
 //connect to mongoosedb
-mongoose.connect('mongodb://localhost:27017/school_portal');
+mongoose.connect('mongodb://easybuoy:VIbPabyeiShryo9@ds235065.mlab.com:35065/school_portal');
 
 //on connection
 mongoose.connection.on('connected', function () {
@@ -28,7 +28,7 @@ mongoose.connection.on('error', function (err) {
 
 
 //port no
-const port = 3000;
+const port = process.env.PORT || 8080;
 
 //adding middleware
  app.use(cors());

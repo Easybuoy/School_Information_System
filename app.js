@@ -41,7 +41,7 @@ app.use(bodyParser.json());
 
  // Send all other request to Angular
 // app.get('*', function (req, res) {
-//     res.sendFile(path.join(__dirname, 'frontend'));
+//     res.sendFile(path.join(__dirname, '/frontend/dist'));
 // });
 
 

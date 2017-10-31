@@ -17,6 +17,7 @@ import 'rxjs/add/operator/toPromise';
 export class UpdateStudentComponent implements OnInit {
 
   students = [];
+  _id: string;
   surname: string;
   name: string;
   age: number;
@@ -33,7 +34,7 @@ export class UpdateStudentComponent implements OnInit {
   constructor(public snackBar: MatSnackBar, private studentService: StudentService) { }
 
   ngOnInit() {
-    this.studentService.getStudents()
+    this.studentService.getOneStudent( this._id)
       .subscribe( students => this.students = students);
   }
   openSnackBar(message: string, action: string) {

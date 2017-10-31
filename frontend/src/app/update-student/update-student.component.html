@@ -6,7 +6,7 @@
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item>
+    <button mat-menu-item disabled>
       <mat-icon><i class="material-icons">perm_identity</i></mat-icon>
       <span>Profile</span>
     </button>
@@ -14,7 +14,7 @@
       <mat-icon>notifications_off</mat-icon>
       <span>Notifications</span>
     </button>
-    <button mat-menu-item>
+    <button mat-menu-item disabled>
       <mat-icon>fingerprint</mat-icon>
       <span>Login</span>
     </button>
@@ -24,32 +24,32 @@
 
 <mat-tab-group >
 <mat-tab label="Update Student" >
-<form *ngFor="let student of students" (ngSubmit)="updateStudent(student._id)" name="studentForm">
+<form  (ngSubmit)="updateStudent(student._id)" name="studentForm">
   <div class="form-container">
     <h1> Update Student</h1>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Surname" [(ngModel)]="student.surname" name="surname" required>
+      <input matInput type="text" placeholder="Surname" [(ngModel)]="students.surname" name="surname" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Name" [(ngModel)]="student.name" name="name" required>
+      <input matInput type="text" placeholder="Name" [(ngModel)]="students.name" name="name" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="email" placeholder="Email" [(ngModel)]="student.email" name="email" required>
+      <input matInput type="email" placeholder="Email" [(ngModel)]="students.email" name="email" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Address" [(ngModel)]="student.address" name="address" required>
+      <input matInput type="text" placeholder="Address" [(ngModel)]="students.address" name="address" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="number" placeholder="Phone" [(ngModel)]="student.phone" name="phone" >
+      <input matInput type="number" placeholder="Phone" [(ngModel)]="students.phone" name="phone" >
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Gender" [(ngModel)]="student.gender" name="gender" required>
+      <input matInput type="text" placeholder="Gender" [(ngModel)]="students.gender" name="gender" required>
     </mat-form-field>
 
     <!--<mat-form-field>-->
@@ -60,21 +60,21 @@
     <!--</mat-form-field>-->
 
     <mat-form-field>
-      <input matInput type="number" placeholder="Age" [(ngModel)]="student.age" name="age" required>
+      <input matInput type="number" placeholder="Age" [(ngModel)]="students.age" name="age" required>
     </mat-form-field>
 
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Department" [(ngModel)]="student.department" name="department" required>
+      <input matInput type="text" placeholder="Department" [(ngModel)]="students.department" name="department" required>
     </mat-form-field>
 
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Course" [(ngModel)]="student.course" name="course" required>
+      <input matInput type="text" placeholder="Course" [(ngModel)]="students.course" name="course" required>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="text" placeholder="Level" [(ngModel)]="student.level" name="level" required>
+      <input matInput type="text" placeholder="Level" [(ngModel)]="students.level" name="level" required>
     </mat-form-field>
 
     <!--<mat-form-field>-->
@@ -88,7 +88,7 @@
     <!--</mat-form-field>-->
 
     <mat-form-field>
-      <input matInput type="number" placeholder="Year Enrolled" [(ngModel)]="student.year_enrolled" name="year_enrolled" required>
+      <input matInput type="number" placeholder="Year Enrolled" [(ngModel)]="students.year_enrolled" name="year_enrolled" required>
     </mat-form-field>
 
 

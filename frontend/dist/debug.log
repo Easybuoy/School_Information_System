@@ -1,0 +1,4 @@
+[1029/211205.307:ERROR:process_reader_win.cc(108)] process 11220 not found
+[1029/211205.313:ERROR:exception_snapshot_win.cc(87)] thread ID 10476 not found in process
+[1029/211205.313:WARNING:crash_report_exception_handler.cc(62)] ProcessSnapshotWin::Initialize failed
+[1029/211205.313:ERROR:scoped_process_suspend.cc(39)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)

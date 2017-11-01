@@ -52,18 +52,18 @@ export class StudentsComponent implements OnInit {
 
 
 
-deleteStudent(id:any){
-  var students = this.students;
+deleteStudent(id: any) {
+  const students = this.students;
   this.studentService.deleteStudent(id)
-    .subscribe(data =>{
-      if(data.n == 1){
-        for(var i = 0; i < students.length;  i++){
+    .subscribe(data => {
+      if (data.n == 1) {
+        for (let i = 0; i < students.length;  i++) {
           if (students[i]._id == id) {
             students.splice(i, 1);
           }
         }
       }
-    })
+    });
 }
 
 

@@ -33,6 +33,33 @@ export class UpdateStudentComponent implements OnInit {
 
   constructor(public snackBar: MatSnackBar, private studentService: StudentService) { }
 
+  updateStudent(id: any) {
+    const updateStd = {
+      surname: this.surname,
+      name: this.name,
+      age: this.age,
+      email: this.email,
+      address: this.address,
+      gender: this.gender,
+      phone: this.phone,
+      department: this.department,
+      course: this.course,
+      level: this.level,
+      year_enrolled: this.year_enrolled
+    }
+    const students = this.students;
+    this.studentService.updateStudent(id)
+      .subscribe(data => {
+        if (data.n == 1) {
+          for (let i = 0; i < students.length;  i++) {
+            if (students[i]._id == id) {
+              students.push(i, 1);
+            }
+          }
+        }
+      });
+  }
+
   ngOnInit() {
     this.studentService.getOneStudent( this._id)
       .subscribe( students => this.students = students);

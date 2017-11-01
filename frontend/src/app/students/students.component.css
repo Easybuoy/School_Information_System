@@ -1,0 +1,60 @@
+.form-container{
+  display: block;
+  width: 90%;
+  padding: 2em;
+  margin: 2em;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+h1{
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-family: 'Muli';
+  font-size: 2em;
+}
+
+.form-container > * {
+  width: 100%;
+}
+
+/*.matlist{*/
+  /*margin-left: 10px;*/
+  /*word-spacing: 30px;*/
+/*}*/
+
+/*.buttonlist{*/
+/*margin: 5px;*/
+/*}*/
+
+
+/*.matlistdesign{*/
+  /*background: white;*/
+  /*width: 90%;*/
+  /*margin: 10px auto 0px auto;*/
+  /*padding: 1em;*/
+  /*box-shadow: 1px 1px 0 lightgrey;*/
+/*}*/
+
+table{
+  /*display: block;*/
+  width: 90%;
+  padding: 2em;
+  margin: 2em;
+  background: #fff;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+
+}
+/*.th{*/
+  /*margin: 20px;*/
+  /*border: 2px black;*/
+/*}*/
+th{
+  color: #ffffff;
+  text-align: center;
+}
+td{
+  text-align: center;
+}

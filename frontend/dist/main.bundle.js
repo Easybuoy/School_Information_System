@@ -384,7 +384,7 @@ var UpdateStudentComponent = (function () {
     }
     UpdateStudentComponent.prototype.updateStudent = function (id) {
         var students = this.students;
-        this.studentService.updateStudent(this._id, this.students)
+        this.studentService.updateStudent(this.students['_id'], this.students)
             .subscribe(function (data) {
             if (data.n == 1) {
                 for (var i = 0; i < students.length; i++) {

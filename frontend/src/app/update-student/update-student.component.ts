@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../student.service';
 import { Student } from '../student';
+import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { Http, Headers } from '@angular/http';
 import {MatSnackBar} from '@angular/material';
 
 import 'rxjs/add/operator/toPromise';
@@ -33,7 +36,7 @@ export class UpdateStudentComponent implements OnInit {
 
   updateStudent(id) {
     const students = this.students;
-    this.studentService.updateStudent(this._id, this.students)
+    this.studentService.updateStudent(this.students['_id'], this.students)
       // .subscribe(students => {this.students.concat(students)});
       .subscribe(data => {
         if (data.n == 1) {
@@ -45,6 +48,7 @@ export class UpdateStudentComponent implements OnInit {
         }
       });
   }
+
 
   ngOnInit() {
     this.studentService.getOneStudent( this._id)

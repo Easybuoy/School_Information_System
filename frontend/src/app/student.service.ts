@@ -34,8 +34,8 @@ import { Http, Headers } from '@angular/http';
   }
 
   // update student
-    updateStudent(id) {
-    return this.http.put('api/student/' + id,'','')
+    updateStudent(id, body) {
+    return this.http.put('api/student/' + id, body,'')
       .map(res => res.json());
     }
 }

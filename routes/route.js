@@ -49,9 +49,10 @@ router.delete('/student/:id',function (req, res, next) {
 
 //update student
 router.put('/student/:id', function (req, res, next) {
+
     Student.update({_id:req.params.id}, req.body, function (err, result) {
         if(err){
-            res.json({msg: 'Failed To Update Student'});
+            res.json({msg: 'Unable To Update Student'});
         }else{
             res.json({msg: 'Student Updated Successfully'});
         }

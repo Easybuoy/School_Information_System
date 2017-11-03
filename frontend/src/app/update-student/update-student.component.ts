@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService } from '../student.service';
 import { Student } from '../student';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
-import { Http, Headers } from '@angular/http';
 import {MatSnackBar} from '@angular/material';
 
 import 'rxjs/add/operator/toPromise';

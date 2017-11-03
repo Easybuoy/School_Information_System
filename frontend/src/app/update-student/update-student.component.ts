@@ -16,6 +16,10 @@ import 'rxjs/add/operator/toPromise';
 })
 export class UpdateStudentComponent implements OnInit {
 
+
+
+  constructor(public snackBar: MatSnackBar, private studentService: StudentService) { }
+  student: Student;
   students = [];
   _id: string;
   surname: string;
@@ -29,26 +33,11 @@ export class UpdateStudentComponent implements OnInit {
   course: string;
   level: string;
   year_enrolled: string;
-  studentObj: object = {};
 
-  constructor(public snackBar: MatSnackBar, private studentService: StudentService) { }
-
-  updateStudent(id: any) {
-    const updateStd = {
-      surname: this.surname,
-      name: this.name,
-      age: this.age,
-      email: this.email,
-      address: this.address,
-      gender: this.gender,
-      phone: this.phone,
-      department: this.department,
-      course: this.course,
-      level: this.level,
-      year_enrolled: this.year_enrolled
-    }
+  updateStudent(id) {
     const students = this.students;
-    this.studentService.updateStudent(id)
+    this.studentService.updateStudent(this._id, this.students)
+      // .subscribe(students => {this.students.concat(students)});
       .subscribe(data => {
         if (data.n == 1) {
           for (let i = 0; i < students.length;  i++) {

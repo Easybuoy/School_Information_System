@@ -202,8 +202,8 @@ var StudentService = (function () {
             .map(function (res) { return res.json(); });
     };
     // update student
-    StudentService.prototype.updateStudent = function (id) {
-        return this.http.put('api/student/' + id, '', '')
+    StudentService.prototype.updateStudent = function (id, body) {
+        return this.http.put('api/student/' + id, body, '')
             .map(function (res) { return res.json(); });
     };
     return StudentService;
@@ -381,24 +381,10 @@ var UpdateStudentComponent = (function () {
         this.snackBar = snackBar;
         this.studentService = studentService;
         this.students = [];
-        this.studentObj = {};
     }
     UpdateStudentComponent.prototype.updateStudent = function (id) {
-        var updateStd = {
-            surname: this.surname,
-            name: this.name,
-            age: this.age,
-            email: this.email,
-            address: this.address,
-            gender: this.gender,
-            phone: this.phone,
-            department: this.department,
-            course: this.course,
-            level: this.level,
-            year_enrolled: this.year_enrolled
-        };
         var students = this.students;
-        this.studentService.updateStudent(id)
+        this.studentService.updateStudent(this._id, this.students)
             .subscribe(function (data) {
             if (data.n == 1) {
                 for (var i = 0; i < students.length; i++) {

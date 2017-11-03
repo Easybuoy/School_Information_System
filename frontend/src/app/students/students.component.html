@@ -113,7 +113,7 @@
         <td>{{student.name}}</td>
         <td>{{student.email}}</td>
         <td>{{student.phone}}</td>
-        <td><button mat-raised-button class="buttonlist" [routerLink] = "['/updateStudent', student._id]"><i class="material-icons" >remove_red_eye</i></button>
+        <td><button mat-raised-button class="buttonlist" [routerLink] = "['/updateStudent', student._id]"><i class="material-icons" >create</i></button>
           <button mat-raised-button class="buttonlist" color="warn" (click)="deleteStudent(student._id)"><i class="material-icons" >delete</i></button></td>
         </tr>
         </tbody>

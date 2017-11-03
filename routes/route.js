@@ -52,9 +52,9 @@ router.put('/student/:id', function (req, res, next) {
 
     Student.update({_id:req.params.id}, req.body, function (err, result) {
         if(err){
-            res.json({msg: 'Unable To Update Student'});
+            res.json(err);
         }else{
-            res.json({msg: 'Student Updated Successfully'});
+            res.json(result);
         }
     });
 });
